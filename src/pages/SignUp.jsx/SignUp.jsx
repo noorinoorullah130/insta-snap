@@ -10,6 +10,11 @@ const SignUp = () => {
         name: "",
         email: "",
         password: "",
+        posts: [
+            {
+                comments: [],
+            },
+        ],
     });
 
     const handleChange = (e) => {

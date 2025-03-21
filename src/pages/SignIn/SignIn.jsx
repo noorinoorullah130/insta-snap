@@ -29,7 +29,7 @@ const SignIn = () => {
 
         if (user) {
             console.log("Logged In User", user);
-            navigate("/dashboard");
+            navigate(`/dashboard/${user.id}`);
         } else {
             alert("Email or Password is invalid!");
         }
