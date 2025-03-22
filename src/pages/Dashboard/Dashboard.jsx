@@ -10,11 +10,13 @@ const Dashboard = () => {
 
     const user = allUsers.find((u) => u.id === parseInt(id));
 
-    console.log(allUsers);
-    console.log(user);
-    console.log(user.name);
-
-    return <div>Dashboard {user.name}</div>;
+    return (
+        <main className="dashboard">
+            {/* <h1>
+                Dashboard: {user.id} - {user.name} - {user.email}
+            </h1> */}
+        </main>
+    );
 };
 
 export default Dashboard;

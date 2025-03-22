@@ -1,5 +1,56 @@
-header {
+.header {
     position: fixed;
     top: 0;
-    bottom: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px 1rem;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header > h1 { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+h1 img {
+    width: 50px;
+}
+
+.header .menus {
+    display: flex;
+    gap: 2rem;
+}
+
+.menus img {
+    width: 70px;
+    filter: grayscale(100%);
+    padding: 5px 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.menus img:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.menus .active {
+    filter: grayscale(0);
+}
+
+.header .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.header .profile img {
+    width: 50px;
+    border-radius: 50%;
 }
