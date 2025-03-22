@@ -1,5 +1,8 @@
 import React from "react";
+import "./Dashboard.css";
 import { useParams } from "react-router-dom";
+import Header from "../../components/Header/Header";
+import Left from "../../components/Left/Left";
 
 const Dashboard = () => {
     const { id } = useParams();
@@ -11,11 +14,11 @@ const Dashboard = () => {
     const user = allUsers.find((u) => u.id === parseInt(id));
 
     return (
-        <main className="dashboard">
-            {/* <h1>
-                Dashboard: {user.id} - {user.name} - {user.email}
-            </h1> */}
-        </main>
+        <div className="dashboard">
+            <Header />
+            <Left />
+            <div className="main-content"></div>
+        </div>
     );
 };
 

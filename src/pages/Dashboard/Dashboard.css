@@ -1,0 +1,12 @@
+.dashboard {
+    width: 82%;
+    min-height: 100vh;
+    margin-left: 18%;
+    padding: 2rem 3rem;
+}
+
+.dashboard .main-content {
+    width: 50%;
+    margin: 5% auto 0;
+    padding: 2rem;
+}
