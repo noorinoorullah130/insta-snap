@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
-import users from "../../data/users";
 
 const SignUp = () => {
     const navigate = useNavigate();
-
+    const [users, setUsers] = useState(
+        JSON.parse(localStorage.getItem("users")) || []
+    );
     const [newUser, setNewUser] = useState({
+        id: Date.now(),
         name: "",
         email: "",
         password: "",
@@ -27,15 +29,17 @@ const SignUp = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        users.push(newUser);
+        const updatedUser = [...users, newUser];
 
-        localStorage.setItem("users", JSON.stringify(users));
+        setUsers(updatedUser);
+
+        localStorage.setItem("users", JSON.stringify(updatedUser));
 
         alert("New User added");
 
         navigate("/");
 
-        console.log(users);
+        console.log(updatedUser);
 
         setNewUser({
             name: "",

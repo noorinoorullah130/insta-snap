@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./SignIn.css";
-import users from "../../data/users";
 import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
@@ -20,6 +19,8 @@ const SignIn = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        const users = JSON.parse(localStorage.getItem("users")) || [];
 
         const user = users.find(
             (user) =>
