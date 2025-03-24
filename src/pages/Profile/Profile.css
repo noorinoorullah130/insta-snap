@@ -1,0 +1,9 @@
+.profile {
+    min-height: 100vh;
+    padding: 8rem 5rem;
+}
+
+.profile .details-container {
+    
+    border: 1px solid red;
+}

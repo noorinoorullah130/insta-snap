@@ -6,14 +6,15 @@ import VideoIcon from "../../assets/video-solid.svg";
 import PhotoIcon from "../../assets/image-solid.svg";
 import LogoutIcon from "../../assets/right-from-bracket-solid.svg";
 import NewPostIcon from "../../assets/new-post.png";
+import { NavLink } from "react-router-dom";
 
 const Left = () => {
     return (
         <div className="left">
-            <div className="menus">
+            <NavLink to="/profile" className="menus">
                 <img className="profile-pic" src={ProfilePic} />
                 <h3>Noorullah</h3>
-            </div>
+            </NavLink>
             <div className="menus">
                 <img src={NewPostIcon} />
                 <h3>New Post</h3>

@@ -1,23 +1,28 @@
-import React from "react";
-import "./Dashboard.css";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
+import "./Dashboard.css";
 import Header from "../../components/Header/Header";
 import Left from "../../components/Left/Left";
 
-const Dashboard = () => {
+const Dashboard = ({ setLoggedUser }) => {
+    const [user, setUser] = useState({});
     const { id } = useParams();
 
-    console.log(id);
-
-    const allUsers = JSON.parse(localStorage.getItem("users")) || [];
-
-    const user = allUsers.find((u) => u.id === parseInt(id));
+    useEffect(() => {
+        const allUsers = JSON.parse(localStorage.getItem("users")) || [];
+        const loggedInUser = allUsers.find((u) => u.id === parseInt(id));
+        setUser(loggedInUser);
+        setLoggedUser(loggedInUser);
+    }, []);
 
     return (
         <div className="dashboard">
             <Header />
             <Left />
-            <div className="main-content"></div>
+            <div className="main-content">
+                <h1>User: {user.name}</h1>
+            </div>
         </div>
     );
 };

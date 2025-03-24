@@ -19,7 +19,7 @@ const Header = () => {
                 <img src={VideoIcon} alt="svg icon" />
                 <img src={PhotoIcon} alt="svg icon" />
             </div>
-            <div className="profile">
+            <div className="profile-picture">
                 <h3>Noorullah</h3>
                 <img src={ProfilePic} alt="" />
             </div>
