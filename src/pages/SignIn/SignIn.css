@@ -46,6 +46,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .sign-in-container > form label {
@@ -96,4 +97,10 @@ form button:hover {
     left: auto;
     color: white;
     font-size: 20px;
+}
+
+.sign-in-error {
+    position: absolute;
+    bottom: -30px;
+    color: red;
 }

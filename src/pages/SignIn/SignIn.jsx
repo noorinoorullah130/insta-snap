@@ -7,7 +7,7 @@ const SignIn = () => {
         email: "",
         password: "",
     });
-
+    const [error, setError] = useState(false);
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -32,7 +32,10 @@ const SignIn = () => {
             console.log("Logged In User", user);
             navigate(`/dashboard/${user.id}`);
         } else {
-            alert("Email or Password is invalid!");
+            setError(true);
+            setTimeout(() => {
+                setError(false);
+            }, 2000);
         }
     };
 
@@ -52,6 +55,7 @@ const SignIn = () => {
                         placeholder="Enter your email"
                         required
                     />
+
                     <label htmlFor="password">Password:</label>
                     <input
                         type="password"
@@ -62,6 +66,13 @@ const SignIn = () => {
                         placeholder="Enter your password"
                         required
                     />
+
+                    {error && (
+                        <p className="sign-in-error">
+                            Email or Password is invalid!
+                        </p>
+                    )}
+
                     <button type="submit">Login</button>
                 </form>
                 <p onClick={() => navigate("/signup")}>

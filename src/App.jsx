@@ -9,7 +9,7 @@ const App = () => {
     const [loggedUser, setLoggedUser] = useState({});
 
     useEffect(() => {
-        const user = JSON.parse(localStorage.getItem("loggedInUser"));
+        const user = JSON.parse(localStorage.getItem("loggedInUser")) || [];
         if (user) {
             setLoggedUser(user);
         }

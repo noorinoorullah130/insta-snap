@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import InstagramIcon from "../../assets/instagram-brands.svg";
 import HomeIcon from "../../assets/house-solid.svg";
@@ -8,6 +8,14 @@ import PhotoIcon from "../../assets/image-solid.svg";
 import ProfilePic from "../../assets/users-images/profile pic.webp";
 
 const Header = () => {
+    const [user, setUser] = useState({});
+
+    useEffect(() => {
+        const loggedUser =
+            JSON.parse(localStorage.getItem("loggedInUser")) || [];
+        setUser(loggedUser);
+    }, []);
+
     return (
         <header className="header">
             <h1>
@@ -20,7 +28,9 @@ const Header = () => {
                 <img src={PhotoIcon} alt="svg icon" />
             </div>
             <div className="profile-picture">
-                <h3>Noorullah</h3>
+                <h3>
+                    {user.name} {user.lastName}
+                </h3>
                 <img src={ProfilePic} alt="" />
             </div>
         </header>
