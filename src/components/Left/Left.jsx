@@ -2,7 +2,6 @@ import React from "react";
 import "./Left.css";
 import ProfilePic from "../../assets/users-images/profile pic.webp";
 import FriendsIcon from "../../assets/user-group-solid.svg";
-import VideoIcon from "../../assets/video-solid.svg";
 import PhotoIcon from "../../assets/image-solid.svg";
 import LogoutIcon from "../../assets/right-from-bracket-solid.svg";
 import NewPostIcon from "../../assets/new-post.png";
@@ -22,10 +21,6 @@ const Left = () => {
             <div className="menus">
                 <img src={FriendsIcon} />
                 <h3>Friends</h3>
-            </div>
-            <div className="menus">
-                <img src={VideoIcon} />
-                <h3>Videos</h3>
             </div>
             <div className="menus">
                 <img src={PhotoIcon} />

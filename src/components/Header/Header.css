@@ -40,9 +40,12 @@ h1 img {
     background-color: rgb(240, 240, 240);
 }
 
+a:any-link {
+    text-decoration: none;
+}
+
 .menus .active {
     filter: grayscale(0);
-    border-bottom: 5px solid rgb(26, 115, 232);
 }
 
 .header .profile-picture {
