@@ -4,6 +4,20 @@
 }
 
 .profile .details-container {
-    
-    border: 1px solid red;
+    padding: 1rem;
+
+}
+
+.profile-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 1px solid gray;
+    padding-bottom: 1rem;
+}
+
+.profile-details img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
 }

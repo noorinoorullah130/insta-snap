@@ -12,6 +12,9 @@ const Dashboard = ({ setLoggedUser }) => {
     useEffect(() => {
         const allUsers = JSON.parse(localStorage.getItem("users")) || [];
         const loggedInUser = allUsers.find((u) => u.id === parseInt(id));
+
+        localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+
         setUser(loggedInUser);
         setLoggedUser(loggedInUser);
     }, []);

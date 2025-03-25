@@ -10,8 +10,10 @@ const SignUp = () => {
     const [newUser, setNewUser] = useState({
         id: Date.now(),
         name: "",
+        lastName: "",
         email: "",
         password: "",
+        image: null,
         posts: [
             {
                 comments: [],
@@ -29,6 +31,17 @@ const SignUp = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        const existedEmail = users.some(
+            (user) => user.email.toLowerCase() === newUser.email.toLowerCase()
+        );
+
+        if (existedEmail) {
+            alert(
+                "This email is already registered. Please use a different email."
+            );
+            return;
+        }
+
         const updatedUser = [...users, newUser];
 
         setUsers(updatedUser);
@@ -43,9 +56,25 @@ const SignUp = () => {
 
         setNewUser({
             name: "",
+            lastName: "",
             email: "",
             password: "",
+            image: null,
         });
+    };
+
+    const handleImageUpload = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setNewUser((prev) => ({
+                    ...prev,
+                    image: reader.result,
+                }));
+            };
+            reader.readAsDataURL(file);
+        }
     };
 
     return (
@@ -64,6 +93,18 @@ const SignUp = () => {
                         placeholder="Enter your name"
                         required
                     />
+
+                    <label htmlFor="lastName">Last Name:</label>
+                    <input
+                        type="text"
+                        name="lastName"
+                        value={newUser.lastName}
+                        onChange={handleChange}
+                        id="lastName"
+                        placeholder="Enter your Last Name"
+                        required
+                    />
+
                     <label htmlFor="email">Email:</label>
                     <input
                         type="email"
@@ -74,6 +115,7 @@ const SignUp = () => {
                         placeholder="Enter your email"
                         required
                     />
+
                     <label htmlFor="password">Password:</label>
                     <input
                         type="password"
@@ -84,6 +126,15 @@ const SignUp = () => {
                         placeholder="Enter your password"
                         required
                     />
+
+                    <label htmlFor="image">Upload Image:</label>
+                    <input
+                        type="file"
+                        name="image"
+                        onChange={handleImageUpload}
+                        id="image"
+                    />
+
                     <button type="submit">Sign Up</button>
                 </form>
                 <p onClick={() => navigate("/")}>
