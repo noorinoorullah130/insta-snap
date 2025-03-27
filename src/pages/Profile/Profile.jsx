@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
+import Loader from "../../Common/Loader";
 import "./Profile.css";
 
 const Profile = ({ loggedUser }) => {
@@ -22,7 +23,7 @@ const Profile = ({ loggedUser }) => {
                 <Header />
                 <div className="profile">
                     <div className="details-container">
-                        <p>Loading user data...</p>
+                        <Loader />
                     </div>
                 </div>
             </>
