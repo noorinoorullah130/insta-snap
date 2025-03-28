@@ -1,11 +1,14 @@
 .profile {
+    width: 100%;
+    max-width: 82%;
+    margin-left: 18%;
     min-height: 100vh;
     padding: 8rem 5rem;
+    border: 1px solid red;
 }
 
 .profile .details-container {
     padding: 1rem;
-
 }
 
 .profile-details {

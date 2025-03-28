@@ -7,11 +7,22 @@ import PhotoIcon from "../../assets/image-solid.svg";
 import LogoutIcon from "../../assets/right-from-bracket-solid.svg";
 import NewPostIcon from "../../assets/new-post.png";
 import { NavLink } from "react-router-dom";
+import Loader from "../../Common/Loader";
 
 const Left = () => {
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    if (!user) {
+        return (
+            <>
+                <Loader />
+            </>
+        );
+    }
+
     return (
         <div className="left">
-            <NavLink to="/profile" className="menus">
+            <NavLink to={`/dashboard/${user.id}`} className="menus">
                 <img src={HomeIcon} />
                 <h3>Home</h3>
             </NavLink>
@@ -21,32 +32,24 @@ const Left = () => {
                 <h3>Noorullah</h3>
             </NavLink>
 
-            <NavLink>
-                <div className="menus">
-                    <img src={NewPostIcon} />
-                    <h3>New Post</h3>
-                </div>
+            <NavLink to="/newpost" className="menus">
+                <img src={NewPostIcon} />
+                <h3>New Post</h3>
             </NavLink>
 
-            <NavLink>
-                <div className="menus">
-                    <img src={FriendsIcon} />
-                    <h3>Friends</h3>
-                </div>
+            <NavLink to="/friends" className="menus">
+                <img src={FriendsIcon} />
+                <h3>Friends</h3>
             </NavLink>
 
-            <NavLink>
-                <div className="menus">
-                    <img src={PhotoIcon} />
-                    <h3>Images</h3>
-                </div>
+            <NavLink to="/images" className="menus">
+                <img src={PhotoIcon} />
+                <h3>Images</h3>
             </NavLink>
 
-            <NavLink>
-                <div className="menus">
-                    <img src={LogoutIcon} />
-                    <h3>Logout</h3>
-                </div>
+            <NavLink to="/" className="menus">
+                <img src={LogoutIcon} />
+                <h3>Logout</h3>
             </NavLink>
         </div>
     );

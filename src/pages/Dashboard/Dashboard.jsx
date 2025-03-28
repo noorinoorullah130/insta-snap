@@ -17,6 +17,8 @@ const Dashboard = ({ setLoggedUser }) => {
 
         setUser(loggedInUser);
         setLoggedUser(loggedInUser);
+
+        console.log(loggedInUser);
     }, []);
 
     return (

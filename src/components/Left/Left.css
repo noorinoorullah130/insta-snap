@@ -26,3 +26,8 @@
     background-color: rgb(223, 223, 223);
     border-radius: 8px;
 }
+
+.active {
+    background-color: rgb(223, 223, 223);
+    border-radius: 8px;
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import Loader from "../../Common/Loader";
 import "./Profile.css";
+import Left from "../../components/Left/Left";
 
 const Profile = ({ loggedUser }) => {
     const [user, setUser] = useState(null);
@@ -29,10 +30,11 @@ const Profile = ({ loggedUser }) => {
             </>
         );
     }
-
+    
     return (
         <>
             <Header />
+            <Left />
             <div className="profile">
                 <div className="details-container">
                     <div className="profile-details">

@@ -3,15 +3,17 @@ import "./Loader.css";
 
 const Loader = () => {
     return (
-        <div class="lds-roller">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div className="loader">
+            <div className="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
     );
 };
