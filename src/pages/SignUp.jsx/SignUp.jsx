@@ -14,11 +14,8 @@ const SignUp = () => {
         email: "",
         password: "",
         image: null,
-        posts: [
-            {
-                comments: [],
-            },
-        ],
+        posts: [],
+        friends: [],
     });
 
     const handleChange = (e) => {

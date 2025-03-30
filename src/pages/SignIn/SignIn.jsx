@@ -31,6 +31,7 @@ const SignIn = () => {
         if (user) {
             console.log("Logged In User", user);
             navigate(`/dashboard/${user.id}`);
+            localStorage.setItem("loggedInUser", JSON.stringify(user));
         } else {
             setError(true);
             setTimeout(() => {
