@@ -3,6 +3,7 @@ import Header from "../../components/Header/Header";
 import Loader from "../../Common/Loader";
 import "./Profile.css";
 import Left from "../../components/Left/Left";
+import Post from "../../components/Post/Post";
 
 const Profile = ({ loggedUser }) => {
     const [user, setUser] = useState(null);
@@ -46,7 +47,11 @@ const Profile = ({ loggedUser }) => {
                             <h2>{user.email}</h2>
                         </div>
                     </div>
-                    <div className="all-posts"></div>
+                    <div className="all-posts">
+                        <Post />
+                        <Post />
+                        <Post />
+                    </div>
                 </div>
             </div>
         </>

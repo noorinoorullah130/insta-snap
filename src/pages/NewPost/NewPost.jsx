@@ -12,13 +12,6 @@ const NewPost = () => {
             <div className="new-post">
                 <form className="post-form">
                     <h1>Create New Post</h1>
-                    <label htmlFor="title">Title</label>
-                    <input
-                        type="text"
-                        id="title"
-                        placeholder="Enter post title..."
-                    />
-
                     <label htmlFor="post-content">Post Content</label>
                     <textarea
                         placeholder="Enter post Content"

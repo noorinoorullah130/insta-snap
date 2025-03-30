@@ -3,7 +3,6 @@ import "./Left.css";
 import ProfilePic from "../../assets/users-images/profile pic.webp";
 import HomeIcon from "../../assets/house-solid.svg";
 import FriendsIcon from "../../assets/user-group-solid.svg";
-import PhotoIcon from "../../assets/image-solid.svg";
 import LogoutIcon from "../../assets/right-from-bracket-solid.svg";
 import NewPostIcon from "../../assets/new-post.png";
 import { NavLink } from "react-router-dom";
@@ -40,11 +39,6 @@ const Left = () => {
             <NavLink to="/friends" className="menus">
                 <img src={FriendsIcon} />
                 <h3>Friends</h3>
-            </NavLink>
-
-            <NavLink to="/images" className="menus">
-                <img src={PhotoIcon} />
-                <h3>Images</h3>
             </NavLink>
 
             <NavLink to="/" className="menus">

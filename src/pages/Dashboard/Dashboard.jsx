@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import "./Dashboard.css";
 import Header from "../../components/Header/Header";
 import Left from "../../components/Left/Left";
+import Post from "../../components/Post/Post";
+import Suggestions from "../../components/Suggestions/Suggestions";
 
 const Dashboard = ({ setLoggedUser }) => {
     const [user, setUser] = useState({});
@@ -26,7 +28,13 @@ const Dashboard = ({ setLoggedUser }) => {
             <Header />
             <Left />
             <div className="main-content">
-                <h1>User: {user.name}</h1>
+                <div className="all-posts">
+                    <Post />
+                </div>
+
+                <div className="suggestions-container">
+                    <Suggestions />
+                </div>
             </div>
         </div>
     );

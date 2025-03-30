@@ -1,0 +1,21 @@
+.comment {
+    margin-top: 10px;
+    position: relative;
+}
+
+.comment input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+}
+
+.comment img {
+    width: 25px;
+    position: absolute;
+    top: 23%;
+    right: 1%;
+    cursor: pointer;
+}
