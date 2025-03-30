@@ -28,7 +28,7 @@ const Left = () => {
 
             <NavLink to="/profile" className="menus">
                 <img className="profile-pic" src={ProfilePic} />
-                <h3>Noorullah</h3>
+                <h3>{user.name}</h3>
             </NavLink>
 
             <NavLink to="/newpost" className="menus">

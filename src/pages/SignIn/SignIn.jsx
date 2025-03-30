@@ -20,7 +20,7 @@ const SignIn = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const users = JSON.parse(localStorage.getItem("users")) || [];
+        const users = JSON.parse(localStorage.getItem("users") || "[]");
 
         const user = users.find(
             (user) =>
