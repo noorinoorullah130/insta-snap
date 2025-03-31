@@ -1,18 +1,20 @@
 import React from "react";
 import "./Friend.css";
 
-import ProfilePicture from "../../assets/users-images/profile pic.webp";
-
-const Friend = () => {
+const Friend = ({ friends, handleRemoveFriend }) => {
     return (
         <div className="friend">
-            <div className="friend-container">
-                <img src={ProfilePicture} alt="" />
-                <div className="friend-details">
-                    <h2>Noorullah</h2>
-                    <button>Remove Friend</button>
+            {friends.map((fr, i) => (
+                <div className="friend-container" key={i}>
+                    <img src={fr.image} alt="" />
+                    <div className="friend-details">
+                        <h2>{fr.name}</h2>
+                        <button onClick={() => handleRemoveFriend(fr)}>
+                            Remove Friend
+                        </button>
+                    </div>
                 </div>
-            </div>
+            ))}
         </div>
     );
 };
