@@ -5,33 +5,9 @@ import "./Profile.css";
 import Left from "../../components/Left/Left";
 import Post from "../../components/Post/Post";
 
-const Profile = ({ loggedUser }) => {
-    const [user, setUser] = useState(null);
+const Profile = () => {
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
 
-    useEffect(() => {
-        if (loggedUser) {
-            setUser(loggedUser);
-        } else {
-            const loggedInUser = JSON.parse(
-                localStorage.getItem("loggedInUser")
-            );
-            setUser(loggedInUser);
-        }
-    }, [loggedUser]);
-
-    if (!user) {
-        return (
-            <>
-                <Header />
-                <div className="profile">
-                    <div className="details-container">
-                        <Loader />
-                    </div>
-                </div>
-            </>
-        );
-    }
-    
     return (
         <>
             <Header />
@@ -39,18 +15,20 @@ const Profile = ({ loggedUser }) => {
             <div className="profile">
                 <div className="details-container">
                     <div className="profile-details">
-                        <img src={user.image} alt="profile image" />
-                        <div>
-                            <h1>
-                                {user.name} {user.lastName}
+                        <img
+                            src={user?.image}
+                            alt="profile"
+                            className="profile-img"
+                        />
+                        <div className="user-info">
+                            <h1 className="user-name">
+                                {user?.name} {user?.lastName}
                             </h1>
-                            <h2>{user.email}</h2>
+                            <h2 className="user-email">{user?.email}</h2>
                         </div>
                     </div>
                     <div className="all-posts">
-                        <Post />
-                        <Post />
-                        <Post />
+                        <Post allPosts={user.posts.reverse()} />
                     </div>
                 </div>
             </div>

@@ -32,11 +32,8 @@
 .post-content {
     display: flex;
     flex-direction: column;
-}
-
-.post-content p {
-    border-bottom: 1px solid gray;
-    padding-bottom: 2rem;
+    border-bottom: 1px solid rgb(201, 201, 201);
+    padding-bottom: 1rem;
 }
 
 .post-content img {
@@ -48,8 +45,6 @@
     align-items: center;
     justify-content: space-between;
     gap: 5px;
-    border-bottom: 1px solid gray;
-    padding-bottom: 10px;
 }
 
 .post-actions button {

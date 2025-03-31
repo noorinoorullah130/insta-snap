@@ -7,58 +7,59 @@ import PostImage from "../../assets/bg-images/bg-sign-in-basic.jpeg";
 import LikeIcon from "../../assets/thumbs-up-solid.svg";
 import CommentIcon from "../../assets/comment-solid.svg";
 import ShareIcon from "../../assets/share-solid.svg";
+import Loader from "../../Common/Loader";
 
-const Post = () => {
-    return (
-        <div className="post">
+const Post = ({ allPosts }) => {
+    if (!allPosts) {
+        return <Loader />;
+    }
+
+    return allPosts.map((post) => (
+        <div className="post" key={post.id}>
             <div className="post-header">
                 <div className="post-header-left">
-                    <img src={ProfilePic} alt="post profile picture" />
+                    <img
+                        src={post.authorProfilePic}
+                        alt="post profile picture"
+                    />
 
                     <div className="post-details">
-                        <h2>Noorullah</h2>
-                        <p>{new Date().toLocaleString()}</p>
+                        <h2>{post.authorName}</h2>
+                        <p>{new Date(post.timestamp).toLocaleString()}</p>
                     </div>
                 </div>
                 <h1>...</h1>
             </div>
             <div className="post-body">
                 <div className="post-content">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Aspernatur fugiat repudiandae tempora, dolore dolores
-                        sapiente hic delectus fugit nisi doloribus et quia!
-                        Omnis, exercitationem asperiores ut unde adipisci
-                        perferendis officia.
-                    </p>
-                    <img src={PostImage} alt="" />
+                    <div style={{ whiteSpace: "pre-wrap" }}>{post.content}</div>
+                    {post.image && <img src={post.image} alt="Post content" />}
                 </div>
 
                 <div className="post-actions">
                     <button>
                         Like{" "}
                         <span>
-                            (10) <img src={LikeIcon} alt="" />
+                            ({post.likes}) <img src={LikeIcon} alt="" />
                         </span>
                     </button>
                     <button>
                         Comment{" "}
                         <span>
-                            (10) <img src={CommentIcon} alt="" />
+                            ({post.comment?.length || 0}){" "}
+                            <img src={CommentIcon} alt="" />
                         </span>
                     </button>
                     <button>
                         Share{" "}
                         <span>
-                            (10) <img src={ShareIcon} alt="" />
+                            (0) <img src={ShareIcon} alt="" />
                         </span>
                     </button>
                 </div>
             </div>
-
-            <Comment />
         </div>
-    );
+    ));
 };
 
 export default Post;
